@@ -62,7 +62,7 @@ var Sell = function Sell(props) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fsell&absolutePagePath=%2FUsers%2Fmaxeuler%2FDesktop%2FSoftwareDev%2FReact%2Fborrow-it%2Ffrontend%2Fpages%2Fsell.js ***!
   \*****************************************************************************************************************************************************************/
@@ -85,5 +85,5 @@ module.exports = dll_1aef2d0bbc0d334d831c;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=sell.js.map

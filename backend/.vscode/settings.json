@@ -1,0 +1,7 @@
+{
+	"workbench.colorCustomizations": {
+		"titleBar.activeBackground": "#8e44ad",
+		"titleBar.inactiveBackground": "#8e44ad"
+	},
+	"git.ignoreLimitWarning": true
+}

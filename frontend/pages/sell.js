@@ -1,3 +1,9 @@
-const Sell = props => <div>Sell</div>;
+import SellForm from '../components/SellForm';
+
+const Sell = props => (
+	<div>
+		<SellForm />
+	</div>
+);
 
 export default Sell;

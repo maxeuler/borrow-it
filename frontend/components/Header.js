@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
 		grid-template-columns: auto 1fr;
 		justify-content: space-between;
 		align-items: stretch;
-		background: #f1c40f;
+		background: ${props => props.theme.primaryColor};
 	}
 `;
 

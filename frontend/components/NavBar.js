@@ -5,7 +5,7 @@ import Nav from './styles/NavStyle';
 const NavBar = props => (
 	<Nav>
 		<Link href="/">
-			<a>Home</a>
+			<a>Marketplace</a>
 		</Link>
 		<Link href="/sell">
 			<a>Sell</a>

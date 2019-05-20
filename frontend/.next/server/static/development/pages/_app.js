@@ -276,7 +276,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    box-sizing: border-box;\n  }\n\t*, *.:after, *:before {\n\t\tbox-sizing: inherit;\n\t}\n  body {\n    margin: 0;\n    padding: 0;\n    font-family: sans-serif;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  html {\n    font-size: 10px;\n    box-sizing: border-box;\n  }\n\t*, *:before, *:after {\n\t\tbox-sizing: inherit;\n\t}\n  body {\n    margin: 0;\n    padding: 0;\n    font-family: sans-serif;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

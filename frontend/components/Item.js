@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import Router from 'next/router';
 import styled from 'styled-components';
 import ItemCard from './styles/ItemCard';
-import RequestButton from './styles/RequestButton';
+import StyledLink from './styles/StyledLink';
 
 export const Title = styled.h3`
 	font-size: 2rem;
@@ -22,6 +23,7 @@ class Item extends Component {
 
 		return (
 			<ItemCard>
+				{item.image && <img src={item.image} alt={item.title} />}
 				<Title>
 					<Link href="/">
 						<a>{item.title}</a>
@@ -29,7 +31,14 @@ class Item extends Component {
 				</Title>
 				<p>{item.description}</p>
 				<p>{item.maxDays}</p>
-				<RequestButton>Send Request</RequestButton>
+				<Link
+					href={{
+						pathname: 'item',
+						query: { id: item.id }
+					}}
+				>
+					<StyledLink>View Details</StyledLink>
+				</Link>
 			</ItemCard>
 		);
 	}

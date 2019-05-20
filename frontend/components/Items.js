@@ -10,6 +10,7 @@ const ALL_ITEMS_QUERY = gql`
 			id
 			title
 			description
+			image
 			maxDays
 		}
 	}

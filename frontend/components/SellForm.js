@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import Router from 'next/router';
 import Form from './styles/Form';
 import { Title } from './Item';
 
@@ -17,8 +18,7 @@ const CREATE_ITEM_MUTATION = gql`
 			image: $image
 			maxDays: $maxDays
 		) {
-			title
-			description
+			id
 		}
 	}
 `;
@@ -28,7 +28,7 @@ class SellForm extends Component {
 		title: '',
 		description: '',
 		image: '',
-		maxDays: null
+		maxDays: 7
 	};
 
 	handleChange = e => {
@@ -67,6 +67,10 @@ class SellForm extends Component {
 								e.preventDefault();
 								const res = await createItem();
 								console.log(res);
+								Router.push({
+									pathname: '/item',
+									query: { id: res.data.createItem.id }
+								});
 							}}
 						>
 							<fieldset>

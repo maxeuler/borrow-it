@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,10 +115,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _styles_ItemCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/ItemCard */ "./components/styles/ItemCard.js");
-/* harmony import */ var _styles_RequestButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/RequestButton */ "./components/styles/RequestButton.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _styles_ItemCard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/ItemCard */ "./components/styles/ItemCard.js");
+/* harmony import */ var _styles_StyledLink__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./styles/StyledLink */ "./components/styles/StyledLink.js");
 
 
 
@@ -143,7 +145,8 @@ function _templateObject() {
 
 
 
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_9___default.a.h3(_templateObject(), function (props) {
+
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_10___default.a.h3(_templateObject(), function (props) {
   return props.theme.black;
 });
 
@@ -162,50 +165,70 @@ function (_Component) {
     key: "render",
     value: function render() {
       var item = this.props.item;
-      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_styles_ItemCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(Title, {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_styles_ItemCard__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
+        },
+        __self: this
+      }, item.image && react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("img", {
+        src: item.image,
+        alt: item.title,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(Title, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         },
         __self: this
       }, item.title))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 32
         },
         __self: this
       }, item.description), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 33
         },
         __self: this
-      }, item.maxDays), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_styles_RequestButton__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }, item.maxDays), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: {
+          pathname: 'item',
+          query: {
+            id: item.id
+          }
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 34
         },
         __self: this
-      }, "Send Request"));
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_styles_StyledLink__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, "View Details")));
     }
   }]);
 
@@ -244,8 +267,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
-/* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Item */ "./components/Item.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
+/* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Item */ "./components/Item.js");
 
 
 
@@ -260,7 +285,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/maxeuler/Desktop/SoftwareDev/React/borrow-it/frontend/components/SellForm.js";
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_10__["default"])(["\n\tmutation CREATE_ITEM_MUTATION(\n\t\t$title: String!\n\t\t$description: String!\n\t\t$image: String!\n\t\t$maxDays: Int\n\t) {\n\t\tcreateItem(\n\t\t\ttitle: $title\n\t\t\tdescription: $description\n\t\t\timage: $image\n\t\t\tmaxDays: $maxDays\n\t\t) {\n\t\t\ttitle\n\t\t\tdescription\n\t\t}\n\t}\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_10__["default"])(["\n\tmutation CREATE_ITEM_MUTATION(\n\t\t$title: String!\n\t\t$description: String!\n\t\t$image: String!\n\t\t$maxDays: Int\n\t) {\n\t\tcreateItem(\n\t\t\ttitle: $title\n\t\t\tdescription: $description\n\t\t\timage: $image\n\t\t\tmaxDays: $maxDays\n\t\t) {\n\t\t\tid\n\t\t}\n\t}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -268,6 +293,7 @@ function _templateObject() {
 
   return data;
 }
+
 
 
 
@@ -298,7 +324,7 @@ function (_Component) {
       title: '',
       description: '',
       image: '',
-      maxDays: null
+      maxDays: 7
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "handleChange", function (e) {
@@ -382,13 +408,13 @@ function (_Component) {
             lineNumber: 63
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_15__["Title"], {
+        }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_16__["Title"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 64
           },
           __self: this
-        }, "Borrow Your Stuff! \uD83D\uDE80"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        }, "Borrow Your Stuff! \uD83D\uDE80"), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_15__["default"], {
           onSubmit:
           /*#__PURE__*/
           function () {
@@ -407,8 +433,14 @@ function (_Component) {
                     case 3:
                       res = _context2.sent;
                       console.log(res);
+                      next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push({
+                        pathname: '/item',
+                        query: {
+                          id: res.data.createItem.id
+                        }
+                      });
 
-                    case 5:
+                    case 6:
                     case "end":
                       return _context2.stop();
                   }
@@ -428,14 +460,14 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("fieldset", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 76
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 77
           },
           __self: this
         }, "Title", react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("input", {
@@ -447,14 +479,14 @@ function (_Component) {
           value: _this2.state.title,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 79
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
           htmlFor: "image",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 84
+            lineNumber: 88
           },
           __self: this
         }, "Image", react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("input", {
@@ -465,7 +497,7 @@ function (_Component) {
           onChange: _this2.uploadFile,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 86
+            lineNumber: 90
           },
           __self: this
         }), _this2.state.image && react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("img", {
@@ -474,14 +506,14 @@ function (_Component) {
           alt: "Upload Preview",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 98
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
           htmlFor: "description",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 101
+            lineNumber: 105
           },
           __self: this
         }, "Description", react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("textarea", {
@@ -492,14 +524,14 @@ function (_Component) {
           value: _this2.state.description,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 107
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
           htmlFor: "maxDays",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 115
           },
           __self: this
         }, "Max Days", react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("input", {
@@ -510,14 +542,14 @@ function (_Component) {
           value: _this2.state.maxDays,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 117
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121
+            lineNumber: 125
           },
           __self: this
         }, "Upload"))));
@@ -602,10 +634,10 @@ var ItemCard = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div(_tem
 
 /***/ }),
 
-/***/ "./components/styles/RequestButton.js":
-/*!********************************************!*\
-  !*** ./components/styles/RequestButton.js ***!
-  \********************************************/
+/***/ "./components/styles/StyledLink.js":
+/*!*****************************************!*\
+  !*** ./components/styles/StyledLink.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -627,12 +659,12 @@ function _templateObject() {
 }
 
 
-var RequestButton = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button(_templateObject(), function (props) {
+var StyledLink = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a(_templateObject(), function (props) {
   return props.theme.border;
 }, function (props) {
   return props.theme.primaryColor;
 });
-/* harmony default export */ __webpack_exports__["default"] = (RequestButton);
+/* harmony default export */ __webpack_exports__["default"] = (StyledLink);
 
 /***/ }),
 
@@ -1604,7 +1636,7 @@ var Sell = function Sell(props) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*****************************!*\
   !*** multi ./pages/sell.js ***!
   \*****************************/

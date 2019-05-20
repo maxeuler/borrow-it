@@ -2,7 +2,7 @@ import ItemDetail from '../components/ItemDetail';
 
 const Item = props => (
 	<div>
-		<ItemDetail />
+		<ItemDetail id={props.query.id} />
 	</div>
 );
 

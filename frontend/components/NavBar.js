@@ -10,6 +10,9 @@ const NavBar = props => (
 		<Link href="/sell">
 			<a>Upload</a>
 		</Link>
+		<Link href="/auth">
+			<a>Sign Up</a>
+		</Link>
 	</Nav>
 );
 

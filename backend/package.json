@@ -11,6 +11,8 @@
 	"author": "Max Euler",
 	"license": "MIT",
 	"dependencies": {
+		"bcrypt": "^3.0.6",
+		"cookie-parser": "^1.4.4",
 		"graphql": "^14.3.0",
 		"graphql-cli": "^3.0.11",
 		"graphql-yoga": "^1.17.4",

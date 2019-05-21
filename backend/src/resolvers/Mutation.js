@@ -9,6 +9,9 @@ const Mutation = {
 			info
 		);
 		return item;
+	},
+	signup(parent, args, ctx, info) {
+		console.log(args);
 	}
 };
 

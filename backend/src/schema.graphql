@@ -7,6 +7,7 @@ type Mutation {
 		image: String
 		maxDays: Int
 	): Item!
+	signup(email: String, name: String, password: String): User!
 }
 
 type Query {

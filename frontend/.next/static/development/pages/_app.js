@@ -146,7 +146,20 @@ var NavBar = function NavBar(props) {
       lineNumber: 11
     },
     __self: this
-  }, "Upload")));
+  }, "Upload")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/auth",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "Sign Up")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);

@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import Router from 'next/router';
 import Form from './styles/Form';
 import { Title } from './Item';
+import { ALL_ITEMS_QUERY } from './Items';
 
 const CREATE_ITEM_MUTATION = gql`
 	mutation CREATE_ITEM_MUTATION(
@@ -58,7 +59,11 @@ class SellForm extends Component {
 
 	render() {
 		return (
-			<Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
+			<Mutation
+				mutation={CREATE_ITEM_MUTATION}
+				variables={this.state}
+				refetchQueries={[{ query: ALL_ITEMS_QUERY }]}
+			>
 				{(createItem, { loading, error }) => (
 					<React.Fragment>
 						<Title>Borrow Your Stuff! 🚀</Title>
@@ -122,7 +127,7 @@ class SellForm extends Component {
 										value={this.state.maxDays}
 									/>
 								</label>
-								<button type="submit">Upload</button>
+								<button type="submit">Upload{loading ? 'ing' : ''}</button>
 							</fieldset>
 						</Form>
 					</React.Fragment>

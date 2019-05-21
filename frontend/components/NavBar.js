@@ -4,11 +4,11 @@ import Nav from './styles/NavStyle';
 
 const NavBar = props => (
 	<Nav>
-		<Link href="/">
+		<Link href="/items">
 			<a>Marketplace</a>
 		</Link>
 		<Link href="/sell">
-			<a>Sell</a>
+			<a>Upload</a>
 		</Link>
 	</Nav>
 );

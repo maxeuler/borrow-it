@@ -121,7 +121,7 @@ var NavBar = function NavBar(props) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
+    href: "/items",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -146,7 +146,7 @@ var NavBar = function NavBar(props) {
       lineNumber: 11
     },
     __self: this
-  }, "Sell")));
+  }, "Upload")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -254,7 +254,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\tmargin: 0;\n\tpadding: 0;\n\tdisplay: flex;\n\tjustify-content: end;\n\tfont-size: 2rem;\n\ta,\n\tbutton {\n\t\tpadding: 1rem 3rem;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\ttext-decoration: none;\n\t\tcolor: #fff;\n\t\tposition: relative;\n\t}\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\tmargin: 0;\n\tpadding: 0;\n\tdisplay: flex;\n\tjustify-self: end;\n\tfont-size: 2rem;\n\ta,\n\tbutton {\n\t\tpadding: 1rem 3rem;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\ttext-decoration: none;\n\t\tcolor: #fff;\n\t\tposition: relative;\n\t}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1412,7 +1412,7 @@ var unitlessKeys = {
 /*!*****************************************************!*\
   !*** ./node_modules/apollo-boost/lib/bundle.esm.js ***!
   \*****************************************************/
-/*! exports provided: HttpLink, gql, default, ApolloClient, ObservableQuery, NetworkStatus, isApolloError, ApolloError, FetchType, Observable, getOperationName, createOperation, makePromise, toPromise, fromPromise, fromError, empty, from, split, concat, ApolloLink, execute, InMemoryCache, defaultDataIdFromObject, StoreReader, assertIdValue, WriteError, enhanceErrorWithDocument, StoreWriter, HeuristicFragmentMatcher, IntrospectionFragmentMatcher, ObjectCache, defaultNormalizedCacheFactory */
+/*! exports provided: ApolloClient, ObservableQuery, NetworkStatus, isApolloError, ApolloError, FetchType, Observable, getOperationName, createOperation, makePromise, toPromise, fromPromise, fromError, empty, from, split, concat, ApolloLink, execute, InMemoryCache, defaultDataIdFromObject, StoreReader, assertIdValue, WriteError, enhanceErrorWithDocument, StoreWriter, HeuristicFragmentMatcher, IntrospectionFragmentMatcher, ObjectCache, defaultNormalizedCacheFactory, HttpLink, gql, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

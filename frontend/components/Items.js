@@ -6,7 +6,7 @@ import Item from './Item';
 
 const ALL_ITEMS_QUERY = gql`
 	query ALL_ITEMS_QUERY {
-		items {
+		items(orderBy: id_DESC) {
 			id
 			title
 			description
@@ -46,3 +46,4 @@ class Items extends Component {
 }
 
 export default Items;
+export { ALL_ITEMS_QUERY };

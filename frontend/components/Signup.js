@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
 import Form from './styles/Form';
 import { Title } from './Item';
 
@@ -10,6 +11,21 @@ const SIGNUP_MUTATION = gql`
 			id
 			email
 			name
+		}
+	}
+`;
+
+export const Footnote = styled.div`
+	display: flex;
+	button {
+		font-size: 1.5rem;
+		border: none;
+		background: white;
+		cursor: pointer;
+		margin: 0 auto;
+
+		.bold {
+			font-weight: 900;
 		}
 	}
 `;
@@ -39,6 +55,7 @@ class Signup extends Component {
 						<React.Fragment>
 							<Title>Join the Community 🤝</Title>
 							<Form
+								method="POST"
 								onSubmit={async e => {
 									e.preventDefault();
 									this.comparePasswords();
@@ -94,6 +111,11 @@ class Signup extends Component {
 									<button>Sign Up</button>
 								</fieldset>
 							</Form>
+							<Footnote>
+								<button onClick={this.props.toggleHaveAccount}>
+									Already on board? 👉🏼 <span className="bold">Sign In</span>
+								</button>
+							</Footnote>
 						</React.Fragment>
 					);
 				}}

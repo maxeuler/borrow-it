@@ -8,6 +8,7 @@ type Mutation {
 		maxDays: Int
 	): Item!
 	signup(email: String, name: String, password: String): User!
+	signin(email: String, password: String): User!
 }
 
 type Query {

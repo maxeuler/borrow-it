@@ -1,8 +1,8 @@
-import Signup from '../components/Signup';
+import Authentication from '../components/Authentication';
 
 const Auth = props => (
 	<div>
-		<Signup />
+		<Authentication />
 	</div>
 );
 

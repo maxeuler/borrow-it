@@ -37,6 +37,27 @@ const Mutation = {
 		});
 		// 6. return user
 		return user;
+	},
+	async signin(parent, { email, password }, ctx, info) {
+		// 1. check if email exists
+		const user = await ctx.db.query.user({ where: { email } });
+		if (!user) {
+			throw new Error('No user with this email');
+		}
+		// 2. compare passwords
+		const valid = await bcyrpt.compare(password, user.password);
+		if (!valid) {
+			throw new Error('Invalid password!');
+		}
+		// 3. generate jwt
+		const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
+		// 4. set jwt as cookie
+		ctx.response.cookie('token', token, {
+			httpOnly: true,
+			maxAge: 100 * 60 * 60 * 24 * 365 // one year
+		});
+		// 5. send user back
+		return user;
 	}
 };
 

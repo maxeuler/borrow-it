@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Router from 'next/router';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import { Title } from './Item';
 import { Footnote } from './Signup';
+import { CURRENT_USER_QUERY } from './User';
 
 const StyledSmallLink = styled.a`
 	text-decoration: none;
@@ -39,7 +41,11 @@ class Signin extends Component {
 
 	render() {
 		return (
-			<Mutation mutation={SIGNIN_MUTATION} variables={this.state}>
+			<Mutation
+				mutation={SIGNIN_MUTATION}
+				variables={this.state}
+				refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+			>
 				{(signin, { loading, error }) => {
 					return (
 						<React.Fragment>
@@ -49,7 +55,9 @@ class Signin extends Component {
 								onSubmit={async e => {
 									e.preventDefault();
 									const res = await signin();
-									console.log(res);
+									Router.push({
+										pathname: '/'
+									});
 								}}
 							>
 								<fieldset>
@@ -75,7 +83,7 @@ class Signin extends Component {
 											value={this.state.password}
 										/>
 									</label>
-									<button>Sign In</button>
+									<button disabled={loading}>Sign In</button>
 								</fieldset>
 								<Link href="/">
 									<StyledSmallLink>Forgot password? 😮</StyledSmallLink>

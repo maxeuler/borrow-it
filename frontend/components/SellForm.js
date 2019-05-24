@@ -5,6 +5,7 @@ import Router from 'next/router';
 import Form from './styles/Form';
 import { Title } from './Item';
 import { ALL_ITEMS_QUERY } from './Items';
+import IsAuthenticated from './IsAuthenticated';
 
 const CREATE_ITEM_MUTATION = gql`
 	mutation CREATE_ITEM_MUTATION(
@@ -59,80 +60,82 @@ class SellForm extends Component {
 
 	render() {
 		return (
-			<Mutation
-				mutation={CREATE_ITEM_MUTATION}
-				variables={this.state}
-				refetchQueries={[{ query: ALL_ITEMS_QUERY }]}
-			>
-				{(createItem, { loading, error }) => (
-					<React.Fragment>
-						<Title>Borrow Your Stuff! 🚀</Title>
-						<Form
-							onSubmit={async e => {
-								e.preventDefault();
-								const res = await createItem();
-								console.log(res);
-								Router.push({
-									pathname: '/item',
-									query: { id: res.data.createItem.id }
-								});
-							}}
-						>
-							<fieldset>
-								<label htmlFor="title">
-									Title
-									<input
-										type="text"
-										name="title"
-										placeholder="Title"
-										required
-										onChange={this.handleChange}
-										value={this.state.title}
-									/>
-								</label>
-								<label htmlFor="image">
-									Image
-									<input
-										type="file"
-										name="image"
-										placeholder="Upload An Image"
-										required
-										onChange={this.uploadFile}
-									/>
-									{this.state.image && (
-										<img
-											src={this.state.image}
-											width="200"
-											alt="Upload Preview"
+			<IsAuthenticated>
+				<Mutation
+					mutation={CREATE_ITEM_MUTATION}
+					variables={this.state}
+					refetchQueries={[{ query: ALL_ITEMS_QUERY }]}
+				>
+					{(createItem, { loading, error }) => (
+						<React.Fragment>
+							<Title>Borrow Your Stuff! 🚀</Title>
+							<Form
+								onSubmit={async e => {
+									e.preventDefault();
+									const res = await createItem();
+									console.log(res);
+									Router.push({
+										pathname: '/item',
+										query: { id: res.data.createItem.id }
+									});
+								}}
+							>
+								<fieldset>
+									<label htmlFor="title">
+										Title
+										<input
+											type="text"
+											name="title"
+											placeholder="Title"
+											required
+											onChange={this.handleChange}
+											value={this.state.title}
 										/>
-									)}
-								</label>
-								<label htmlFor="description">
-									Description
-									<textarea
-										name="description"
-										placeholer="Enter a description"
-										required
-										onChange={this.handleChange}
-										value={this.state.description}
-									/>
-								</label>
-								<label htmlFor="maxDays">
-									Max Days
-									<input
-										type="number"
-										name="maxDays"
-										required
-										onChange={this.handleChange}
-										value={this.state.maxDays}
-									/>
-								</label>
-								<button type="submit">Upload{loading ? 'ing' : ''}</button>
-							</fieldset>
-						</Form>
-					</React.Fragment>
-				)}
-			</Mutation>
+									</label>
+									<label htmlFor="image">
+										Image
+										<input
+											type="file"
+											name="image"
+											placeholder="Upload An Image"
+											required
+											onChange={this.uploadFile}
+										/>
+										{this.state.image && (
+											<img
+												src={this.state.image}
+												width="200"
+												alt="Upload Preview"
+											/>
+										)}
+									</label>
+									<label htmlFor="description">
+										Description
+										<textarea
+											name="description"
+											placeholer="Enter a description"
+											required
+											onChange={this.handleChange}
+											value={this.state.description}
+										/>
+									</label>
+									<label htmlFor="maxDays">
+										Max Days
+										<input
+											type="number"
+											name="maxDays"
+											required
+											onChange={this.handleChange}
+											value={this.state.maxDays}
+										/>
+									</label>
+									<button type="submit">Upload{loading ? 'ing' : ''}</button>
+								</fieldset>
+							</Form>
+						</React.Fragment>
+					)}
+				</Mutation>
+			</IsAuthenticated>
 		);
 	}
 }

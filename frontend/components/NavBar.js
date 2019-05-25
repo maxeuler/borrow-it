@@ -11,9 +11,14 @@ const NavBar = props => (
 					<a>Marketplace</a>
 				</Link>
 				{currentUser && (
-					<Link href="/sell">
-						<a>Upload</a>
-					</Link>
+					<React.Fragment>
+						<Link href="/sell">
+							<a>Upload</a>
+						</Link>
+						<Link href="/account">
+							<a>Account</a>
+						</Link>
+					</React.Fragment>
 				)}
 				{!currentUser && (
 					<Link href="/auth">

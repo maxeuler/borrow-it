@@ -3,9 +3,18 @@ const jwt = require('jsonwebtoken');
 
 const Mutation = {
 	async createItem(parent, args, ctx, info) {
+		// check if they are logged in
+		if (!ctx.request.userId) {
+			throw new Error('You must be logged in to do that 🙅🏼‍');
+		}
 		const item = await ctx.db.mutation.createItem(
 			{
 				data: {
+					user: {
+						connect: {
+							id: ctx.request.userId
+						}
+					},
 					...args
 				}
 			},

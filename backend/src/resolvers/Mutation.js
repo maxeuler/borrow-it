@@ -67,6 +67,22 @@ const Mutation = {
 		});
 		// 5. send user back
 		return user;
+	},
+	async createReview(parent, args, ctx, info) {
+		const review = await ctx.db.mutation.createReview(
+			{
+				data: {
+					user: {
+						connect: {
+							id: ctx.request.userId
+						}
+					},
+					...args
+				}
+			},
+			info
+		);
+		return review;
 	}
 };
 

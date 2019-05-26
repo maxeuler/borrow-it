@@ -15,3 +15,11 @@ type Item {
 	maxDays: Int
 	user: User!
 }
+
+type Review {
+	id: ID! @id
+	title: String!
+	message: String
+	rating: Int!
+	user: User!
+}

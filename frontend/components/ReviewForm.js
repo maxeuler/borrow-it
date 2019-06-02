@@ -49,12 +49,19 @@ const POST_REVIEW_MUTATION = gql`
 		$title: String
 		$message: String
 		$rating: Int
+		$item: String
 	) {
-		createReview(title: $title, message: $message, rating: $rating) {
+		createReview(
+			title: $title
+			message: $message
+			rating: $rating
+			item: $item
+		) {
 			id
 			title
 			message
 			rating
+			item
 		}
 	}
 `;
@@ -81,7 +88,8 @@ class ReviewForm extends Component {
 				variables={{
 					title: this.state.title,
 					message: this.state.message,
-					rating: parseFloat(this.state.rating)
+					rating: parseFloat(this.state.rating) || 1,
+					item: this.props.item
 				}}
 			>
 				{(createReview, { loading, error }) => (
@@ -89,7 +97,12 @@ class ReviewForm extends Component {
 						onSubmit={async e => {
 							e.preventDefault();
 							const res = await createReview();
-							console.log(res);
+							this.setState({
+								title: '',
+								message: '',
+								rating: 0
+							});
+							this.props.toggleReviewForm();
 						}}
 						method="POST"
 					>

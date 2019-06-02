@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
+import gql from 'graphql-tag';
 import User from './User';
 import { Title } from './Item';
 import Reviews from './Reviews';
+import { StyledButton } from './Reviews';
+
+const ITEMS_FOR_USER_QUERY = gql`
+	query ITEMS_FOR_USER_QUERY($userId: String) {
+		userItems(where: { user: $userId }) {
+			id
+			title
+			description
+			image
+			maxDays
+		}
+	}
+`;
 
 class Account extends Component {
 	render() {
@@ -9,10 +23,10 @@ class Account extends Component {
 			<User>
 				{({ data: { currentUser } }) => {
 					return (
-						<React.Fragment>
+						<>
 							<Title>{currentUser.name}</Title>
-							<Reviews />
-						</React.Fragment>
+							<StyledButton>Sign Out</StyledButton>
+						</>
 					);
 				}}
 			</User>

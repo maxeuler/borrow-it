@@ -10,7 +10,8 @@ const Query = {
 		}
 
 		return ctx.db.query.user({ where: { id: userId } });
-	}
+	},
+	reviews: forwardTo('db')
 };
 
 module.exports = Query;

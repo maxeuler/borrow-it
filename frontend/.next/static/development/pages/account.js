@@ -14,11 +14,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./User */ "./components/User.js");
-/* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Item */ "./components/Item.js");
-/* harmony import */ var _Reviews__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Reviews */ "./components/Reviews.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./User */ "./components/User.js");
+/* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Item */ "./components/Item.js");
+/* harmony import */ var _Reviews__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Reviews */ "./components/Reviews.js");
+
 
 
 
@@ -26,9 +30,23 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/maxeuler/Desktop/SoftwareDev/React/borrow-it/frontend/components/Account.js";
 
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n\tquery ITEMS_FOR_USER_QUERY($userId: String) {\n\t\tuserItems(where: { user: $userId }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tdescription\n\t\t\timage\n\t\t\tmaxDays\n\t\t}\n\t}\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
 
 
 
+
+
+
+
+var ITEMS_FOR_USER_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_7___default()(_templateObject());
 
 var Account =
 /*#__PURE__*/
@@ -44,39 +62,33 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Account, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 23
         },
         __self: this
       }, function (_ref) {
         var currentUser = _ref.data.currentUser;
-        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, {
+        return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_9__["Title"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12
+            lineNumber: 27
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_7__["Title"], {
+        }, currentUser.name), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Reviews__WEBPACK_IMPORTED_MODULE_10__["StyledButton"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13
+            lineNumber: 28
           },
           __self: this
-        }, currentUser.name), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Reviews__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 14
-          },
-          __self: this
-        }));
+        }, "Sign Out"));
       });
     }
   }]);
 
   return Account;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Account);
 
@@ -227,6 +239,97 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./components/Review.js":
+/*!******************************!*\
+  !*** ./components/Review.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var _jsxFileName = "/Users/maxeuler/Desktop/SoftwareDev/React/borrow-it/frontend/components/Review.js";
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\tborder: 1px solid ", ";\n\tmargin: 1rem 0;\n\tpadding: 1rem;\n\theader {\n\t\tdisplay: flex;\n\t\talign-content: space-around;\n\t\t.rating {\n\t\t\tmargin-left: 3rem;\n\t\t}\n\t}\n\t.stars {\n\t\tcolor: ", ";\n\t}\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+var ReviewCard = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), function (props) {
+  return props.theme.border;
+}, function (props) {
+  return props.theme.primaryColor;
+});
+
+var Review = function Review(props) {
+  var _props$review = props.review,
+      title = _props$review.title,
+      message = _props$review.message,
+      rating = _props$review.rating,
+      user = _props$review.user;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ReviewCard, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, user.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+    className: "rating",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    className: "stars",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, '★'.repeat(rating)), '★'.repeat(5 - rating))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  }, message));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Review);
+
+/***/ }),
+
 /***/ "./components/ReviewForm.js":
 /*!**********************************!*\
   !*** ./components/ReviewForm.js ***!
@@ -270,7 +373,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/maxeuler/Desktop/SoftwareDev/React/borrow-it/frontend/components/ReviewForm.js";
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_10__["default"])(["\n\tmutation POST_REVIEW_MUTATION(\n\t\t$title: String\n\t\t$message: String\n\t\t$rating: Int\n\t) {\n\t\tcreateReview(title: $title, message: $message, rating: $rating) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tmessage\n\t\t\trating\n\t\t}\n\t}\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_10__["default"])(["\n\tmutation POST_REVIEW_MUTATION(\n\t\t$title: String\n\t\t$message: String\n\t\t$rating: Int\n\t\t$item: String\n\t) {\n\t\tcreateReview(\n\t\t\ttitle: $title\n\t\t\tmessage: $message\n\t\t\trating: $rating\n\t\t\titem: $item\n\t\t) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tmessage\n\t\t\trating\n\t\t\titem\n\t\t}\n\t}\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -341,11 +444,12 @@ function (_Component) {
         variables: {
           title: this.state.title,
           message: this.state.message,
-          rating: _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2___default()(this.state.rating)
+          rating: _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2___default()(this.state.rating) || 1,
+          item: this.props.item
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 86
         },
         __self: this
       }, function (createReview, _ref) {
@@ -369,9 +473,16 @@ function (_Component) {
 
                     case 3:
                       res = _context.sent;
-                      console.log(res);
 
-                    case 5:
+                      _this2.setState({
+                        title: '',
+                        message: '',
+                        rating: 0
+                      });
+
+                      _this2.props.toggleReviewForm();
+
+                    case 6:
                     case "end":
                       return _context.stop();
                   }
@@ -386,13 +497,13 @@ function (_Component) {
           method: "POST",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 88
+            lineNumber: 96
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(ReviewStars, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96
+            lineNumber: 109
           },
           __self: this
         }, stars.map(function (star) {
@@ -400,7 +511,7 @@ function (_Component) {
             key: star,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 98
+              lineNumber: 111
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("input", {
@@ -411,28 +522,28 @@ function (_Component) {
             onChange: _this2.onChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 99
+              lineNumber: 112
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
             htmlFor: 'star' + star,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 106
+              lineNumber: 119
             },
             __self: this
           }, star, " Stars"));
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("fieldset", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110
+            lineNumber: 123
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
           htmlFor: "title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 124
           },
           __self: this
         }, "Title", react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("input", {
@@ -444,14 +555,14 @@ function (_Component) {
           value: _this2.state.title,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 126
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("label", {
           htmlFor: "message",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 135
           },
           __self: this
         }, "Message", react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("textarea", {
@@ -461,14 +572,14 @@ function (_Component) {
           value: _this2.state.message,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 137
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("button", {
           type: "submit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 144
           },
           __self: this
         }, "Post")));
@@ -487,11 +598,12 @@ function (_Component) {
 /*!*******************************!*\
   !*** ./components/Reviews.js ***!
   \*******************************/
-/*! exports provided: default */
+/*! exports provided: StyledButton, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledButton", function() { return StyledButton; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -503,7 +615,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _ReviewForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ReviewForm */ "./components/ReviewForm.js");
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.esm.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _ReviewForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ReviewForm */ "./components/ReviewForm.js");
+/* harmony import */ var _Review__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Review */ "./components/Review.js");
 
 
 
@@ -513,6 +629,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/maxeuler/Desktop/SoftwareDev/React/borrow-it/frontend/components/Reviews.js";
+
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7__["default"])(["\n\tquery ALL_REVIEWS_QUERY($item: String!) {\n\t\treviews(where: { item: $item }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tmessage\n\t\t\trating\n\t\t\tuser {\n\t\t\t\tname\n\t\t\t}\n\t\t}\n\t}\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject2() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7__["default"])(["\n\tpadding: 1rem 2rem;\n\tbackground: ", ";\n\tcolor: #fff;\n\tborder: 1px solid ", ";\n\tfont-size: 2rem;\n\tmargin: 1rem auto;\n\twidth: 100%;\n\tcursor: pointer;\n"]);
@@ -537,6 +663,9 @@ function _templateObject() {
 
 
 
+
+
+
 var ReviewList = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].div(_templateObject(), function (props) {
   return props.theme.border;
 });
@@ -545,6 +674,7 @@ var StyledButton = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].but
 }, function (props) {
   return props.theme.border;
 });
+var ALL_REVIEWS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_11___default()(_templateObject3());
 
 var Reviews =
 /*#__PURE__*/
@@ -582,26 +712,61 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Reviews, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(ReviewList, {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_10__["Query"], {
+        query: ALL_REVIEWS_QUERY,
+        variables: {
+          item: this.props.item
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 53
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(StyledButton, {
-        onClick: this.toggleReviewForm,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, this.state.showReviewForm ? 'Cancel' : 'New Review'), this.state.showReviewForm ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_ReviewForm__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }) : null, "Reviews");
+      }, function (_ref) {
+        var loading = _ref.loading,
+            error = _ref.error,
+            data = _ref.data;
+        if (error) return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55
+          },
+          __self: this
+        }, "Error");
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(ReviewList, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(StyledButton, {
+          onClick: _this2.toggleReviewForm,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58
+          },
+          __self: this
+        }, _this2.state.showReviewForm ? 'Cancel' : 'New Review'), _this2.state.showReviewForm ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_ReviewForm__WEBPACK_IMPORTED_MODULE_12__["default"], {
+          toggleReviewForm: _this2.toggleReviewForm,
+          item: _this2.props.item,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          },
+          __self: this
+        }) : null, data.reviews.map(function (review) {
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Review__WEBPACK_IMPORTED_MODULE_13__["default"], {
+            review: review,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 68
+            },
+            __self: this
+          });
+        }));
+      });
     }
   }]);
 
@@ -31366,7 +31531,7 @@ var AccountPage = function AccountPage(props) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Faccount&absolutePagePath=%2FUsers%2Fmaxeuler%2FDesktop%2FSoftwareDev%2FReact%2Fborrow-it%2Ffrontend%2Fpages%2Faccount.js ***!
   \***********************************************************************************************************************************************************************/
@@ -31389,5 +31554,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=account.js.map

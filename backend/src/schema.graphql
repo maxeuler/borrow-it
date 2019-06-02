@@ -9,11 +9,17 @@ type Mutation {
 	): Item!
 	signup(email: String, name: String, password: String): User!
 	signin(email: String, password: String): User!
-	createReview(title: String, message: String, rating: Int): Review!
+	createReview(
+		title: String
+		message: String
+		rating: Int
+		item: String
+	): Review!
 }
 
 type Query {
 	items(orderBy: ItemOrderByInput): [Item]!
 	item(where: ItemWhereUniqueInput!): Item
 	currentUser: User
+	reviews(where: ReviewWhereInput!): [Review]!
 }

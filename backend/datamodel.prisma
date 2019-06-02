@@ -22,4 +22,5 @@ type Review {
 	message: String
 	rating: Int!
 	user: User!
+	item: String!
 }

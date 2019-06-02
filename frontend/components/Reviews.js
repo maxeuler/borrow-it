@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import ReviewForm from './ReviewForm';
+import Review from './Review';
 
 const ReviewList = styled.div`
 	width: 80%;
@@ -9,7 +12,7 @@ const ReviewList = styled.div`
 	margin: 0 auto;
 `;
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
 	padding: 1rem 2rem;
 	background: ${props => props.theme.primaryColor};
 	color: #fff;
@@ -18,6 +21,20 @@ const StyledButton = styled.button`
 	margin: 1rem auto;
 	width: 100%;
 	cursor: pointer;
+`;
+
+const ALL_REVIEWS_QUERY = gql`
+	query ALL_REVIEWS_QUERY($item: String!) {
+		reviews(where: { item: $item }) {
+			id
+			title
+			message
+			rating
+			user {
+				name
+			}
+		}
+	}
 `;
 
 class Reviews extends Component {
@@ -33,13 +50,27 @@ class Reviews extends Component {
 
 	render() {
 		return (
-			<ReviewList>
-				<StyledButton onClick={this.toggleReviewForm}>
-					{this.state.showReviewForm ? 'Cancel' : 'New Review'}
-				</StyledButton>
-				{this.state.showReviewForm ? <ReviewForm /> : null}
-				Reviews
-			</ReviewList>
+			<Query query={ALL_REVIEWS_QUERY} variables={{ item: this.props.item }}>
+				{({ loading, error, data }) => {
+					if (error) return <p>Error</p>;
+					return (
+						<ReviewList>
+							<StyledButton onClick={this.toggleReviewForm}>
+								{this.state.showReviewForm ? 'Cancel' : 'New Review'}
+							</StyledButton>
+							{this.state.showReviewForm ? (
+								<ReviewForm
+									toggleReviewForm={this.toggleReviewForm}
+									item={this.props.item}
+								/>
+							) : null}
+							{data.reviews.map(review => (
+								<Review review={review} />
+							))}
+						</ReviewList>
+					);
+				}}
+			</Query>
 		);
 	}
 }

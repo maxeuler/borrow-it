@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 import Link from 'next/link';
 import { Title } from './Item';
 import StyledLink from './styles/StyledLink';
+import Reviews from './Reviews';
 
 const StyledItemDetail = styled.div`
 	max-width: 1200px;
@@ -61,16 +62,19 @@ const ItemDetail = props => (
 			if (loading) return <p>Loading</p>;
 			const { item } = data;
 			return (
-				<StyledItemDetail>
-					<img src={item.image} alt={item.title} />
-					<div className="itemData">
-						<Title>{item.title}</Title>
-						<p>{item.description}</p>
-						<Link>
-							<StyledLink>Send Request</StyledLink>
-						</Link>
-					</div>
-				</StyledItemDetail>
+				<React.Fragment>
+					<StyledItemDetail>
+						<img src={item.image} alt={item.title} />
+						<div className="itemData">
+							<Title>{item.title}</Title>
+							<p>{item.description}</p>
+							{/* <Link>
+								<StyledLink>Send Request</StyledLink>
+							</Link> */}
+						</div>
+					</StyledItemDetail>
+					<Reviews item={item.id} />
+				</React.Fragment>
 			);
 		}}
 	</Query>

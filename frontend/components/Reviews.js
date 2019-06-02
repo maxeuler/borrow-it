@@ -4,6 +4,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import ReviewForm from './ReviewForm';
 import Review from './Review';
+import IsAuthenticated from './IsAuthenticated';
 
 const ReviewList = styled.div`
 	width: 80%;
@@ -39,7 +40,7 @@ const ALL_REVIEWS_QUERY = gql`
 
 class Reviews extends Component {
 	state = {
-		showReviewForm: true
+		showReviewForm: false
 	};
 
 	toggleReviewForm = () => {
@@ -59,10 +60,12 @@ class Reviews extends Component {
 								{this.state.showReviewForm ? 'Cancel' : 'New Review'}
 							</StyledButton>
 							{this.state.showReviewForm ? (
-								<ReviewForm
-									toggleReviewForm={this.toggleReviewForm}
-									item={this.props.item}
-								/>
+								<IsAuthenticated>
+									<ReviewForm
+										toggleReviewForm={this.toggleReviewForm}
+										item={this.props.item}
+									/>
+								</IsAuthenticated>
 							) : null}
 							{data.reviews.map(review => (
 								<Review review={review} />

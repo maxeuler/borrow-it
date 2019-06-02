@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -999,7 +999,7 @@ function (_Component) {
             lineNumber: 52
           },
           __self: this
-        }, "Good to see you again \uD83D\uDC4B\uD83C\uDFFC"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        }, "Sign in my friend \uD83D\uDE4C\uD83C\uDFFC"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_16__["default"], {
           method: "POST",
           onSubmit:
           /*#__PURE__*/
@@ -2604,7 +2604,7 @@ var Sell = function Sell(props) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/sell.js ***!
   \*****************************/

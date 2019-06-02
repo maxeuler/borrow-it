@@ -899,7 +899,7 @@ function (_Component) {
             lineNumber: 52
           },
           __self: this
-        }, "Good to see you again \uD83D\uDC4B\uD83C\uDFFC"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        }, "Sign in my friend \uD83D\uDE4C\uD83C\uDFFC"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_16__["default"], {
           method: "POST",
           onSubmit:
           /*#__PURE__*/
@@ -32092,7 +32092,7 @@ var Sell = function Sell(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fsell&absolutePagePath=%2FUsers%2Fmaxeuler%2FDesktop%2FSoftwareDev%2FReact%2Fborrow-it%2Ffrontend%2Fpages%2Fsell.js ***!
   \*****************************************************************************************************************************************************************/
@@ -32115,5 +32115,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=sell.js.map

@@ -68,6 +68,10 @@ const Mutation = {
 		// 5. send user back
 		return user;
 	},
+	signout(parent, args, ctx, inof) {
+		ctx.response.clearCookie('token');
+		return { message: 'Signed Out! 👋🏼' };
+	},
 	async createReview(parent, args, ctx, info) {
 		const review = await ctx.db.mutation.createReview(
 			{

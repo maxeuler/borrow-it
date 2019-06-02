@@ -49,7 +49,7 @@ class Signin extends Component {
 				{(signin, { loading, error }) => {
 					return (
 						<React.Fragment>
-							<Title>Good to see you again 👋🏼</Title>
+							<Title>Sign in my friend 🙌🏼</Title>
 							<Form
 								method="POST"
 								onSubmit={async e => {

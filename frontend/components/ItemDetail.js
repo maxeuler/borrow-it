@@ -44,6 +44,11 @@ const StyledItemDetail = styled.div`
 	}
 `;
 
+const UserName = styled.p`
+	color: ${props => props.theme.black};
+	font-style: italic;
+`;
+
 const ITEM_DETAIL_QUERY = gql`
 	query ITEM_DETAIL_QUERY($id: ID!) {
 		item(where: { id: $id }) {
@@ -51,6 +56,9 @@ const ITEM_DETAIL_QUERY = gql`
 			title
 			description
 			image
+			user {
+				name
+			}
 		}
 	}
 `;
@@ -67,6 +75,7 @@ const ItemDetail = props => (
 						<img src={item.image} alt={item.title} />
 						<div className="itemData">
 							<Title>{item.title}</Title>
+							<UserName>from {item.user.name}</UserName>
 							<p>{item.description}</p>
 							{/* <Link>
 								<StyledLink>Send Request</StyledLink>

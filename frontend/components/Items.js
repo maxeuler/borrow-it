@@ -16,7 +16,7 @@ const ALL_ITEMS_QUERY = gql`
 	}
 `;
 
-const ItemList = styled.div`
+export const ItemList = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 70px;

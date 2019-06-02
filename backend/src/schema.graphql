@@ -22,4 +22,5 @@ type Query {
 	item(where: ItemWhereUniqueInput!): Item
 	currentUser: User
 	reviews(where: ReviewWhereInput!): [Review]!
+	currentUserItems: [Item]!
 }

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import User from './User';
 import { Title } from './Item';
 import Reviews from './Reviews';
-import { StyledButton } from './Reviews';
+import { Footnote } from './Signup';
+import { ItemList } from './Items';
+import Item from './Item';
 
 const ITEMS_FOR_USER_QUERY = gql`
-	query ITEMS_FOR_USER_QUERY($userId: String) {
-		userItems(where: { user: $userId }) {
+	query ITEMS_FOR_USER_QUERY {
+		currentUserItems {
 			id
 			title
 			description
@@ -20,16 +23,35 @@ const ITEMS_FOR_USER_QUERY = gql`
 class Account extends Component {
 	render() {
 		return (
-			<User>
-				{({ data: { currentUser } }) => {
-					return (
-						<>
-							<Title>{currentUser.name}</Title>
-							<StyledButton>Sign Out</StyledButton>
-						</>
-					);
-				}}
-			</User>
+			<>
+				<User>
+					{({ data: { currentUser } }) => {
+						return (
+							<Query query={ITEMS_FOR_USER_QUERY}>
+								{({ data, loading, error }) => {
+									console.log(data);
+									return (
+										<>
+											<Title>{currentUser.name}</Title>
+											<ItemList>
+												{data.currentUserItems.map(item => (
+													<Item key={item.id} item={item} />
+												))}
+											</ItemList>
+										</>
+									);
+								}}
+							</Query>
+						);
+					}}
+				</User>
+				<Footnote>
+					{/* this looks strange but is for styling purpose */}
+					<button>
+						<span className="bold">Sign Out 👋🏼</span>
+					</button>
+				</Footnote>
+			</>
 		);
 	}
 }

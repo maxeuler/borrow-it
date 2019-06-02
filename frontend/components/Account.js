@@ -7,6 +7,7 @@ import Reviews from './Reviews';
 import { Footnote } from './Signup';
 import { ItemList } from './Items';
 import Item from './Item';
+import UserStats from './UserStats';
 
 const ITEMS_FOR_USER_QUERY = gql`
 	query ITEMS_FOR_USER_QUERY {
@@ -29,10 +30,21 @@ class Account extends Component {
 						return (
 							<Query query={ITEMS_FOR_USER_QUERY}>
 								{({ data, loading, error }) => {
-									console.log(data);
 									return (
 										<>
-											<Title>{currentUser.name}</Title>
+											<div>
+												<Title>My Account! 🏌🏼</Title>
+												<Footnote>
+													{/* this looks strange but is for styling purpose */}
+													<button>
+														<span className="bold">Sign Out 👋🏼</span>
+													</button>
+												</Footnote>
+											</div>
+											<UserStats
+												me={currentUser}
+												itemsCount={data.currentUserItems.length}
+											/>
 											<ItemList>
 												{data.currentUserItems.map(item => (
 													<Item key={item.id} item={item} />
@@ -45,12 +57,6 @@ class Account extends Component {
 						);
 					}}
 				</User>
-				<Footnote>
-					{/* this looks strange but is for styling purpose */}
-					<button>
-						<span className="bold">Sign Out 👋🏼</span>
-					</button>
-				</Footnote>
 			</>
 		);
 	}

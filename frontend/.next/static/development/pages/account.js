@@ -25,6 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Reviews__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Reviews */ "./components/Reviews.js");
 /* harmony import */ var _Signup__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Signup */ "./components/Signup.js");
 /* harmony import */ var _Items__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Items */ "./components/Items.js");
+/* harmony import */ var _UserStats__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./UserStats */ "./components/UserStats.js");
 
 
 
@@ -42,6 +43,7 @@ function _templateObject() {
 
   return data;
 }
+
 
 
 
@@ -71,7 +73,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }, function (_ref) {
@@ -80,24 +82,56 @@ function (_Component) {
           query: ITEMS_FOR_USER_QUERY,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 31
           },
           __self: this
         }, function (_ref2) {
           var data = _ref2.data,
               loading = _ref2.loading,
               error = _ref2.error;
-          console.log(data);
-          return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_10__["Title"], {
+          return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 35
             },
             __self: this
-          }, currentUser.name), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Items__WEBPACK_IMPORTED_MODULE_13__["ItemList"], {
+          }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Item__WEBPACK_IMPORTED_MODULE_10__["Title"], {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 36
+            },
+            __self: this
+          }, "My Account! \uD83C\uDFCC\uD83C\uDFFC"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Signup__WEBPACK_IMPORTED_MODULE_12__["Footnote"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 37
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 39
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
+            className: "bold",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 40
+            },
+            __self: this
+          }, "Sign Out \uD83D\uDC4B\uD83C\uDFFC")))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_UserStats__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            me: currentUser,
+            itemsCount: data.currentUserItems.length,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Items__WEBPACK_IMPORTED_MODULE_13__["ItemList"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 48
             },
             __self: this
           }, data.currentUserItems.map(function (item) {
@@ -106,32 +140,13 @@ function (_Component) {
               item: item,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 38
+                lineNumber: 50
               },
               __self: this
             });
           })));
         });
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Signup__WEBPACK_IMPORTED_MODULE_12__["Footnote"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        className: "bold",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "Sign Out \uD83D\uDC4B\uD83C\uDFFC"))));
+      }));
     }
   }]);
 
@@ -1288,6 +1303,84 @@ var User = function User(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (User);
+
+/***/ }),
+
+/***/ "./components/UserStats.js":
+/*!*********************************!*\
+  !*** ./components/UserStats.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+var _jsxFileName = "/Users/maxeuler/Desktop/SoftwareDev/React/borrow-it/frontend/components/UserStats.js";
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n\tmax-width: 1000px;\n\tmargin: 3rem auto;\n\tdisplay: flex;\n\tlist-style: none;\n\tborder: 1px solid ", ";\n\tbox-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);\n\tpadding: 2rem;\n\tjustify-content: space-between;\n\tli {\n\t\tpadding: 0 2rem;\n\t\tfont-size: 2rem;\n\t\tspan {\n\t\t\tcolor: ", ";\n\t\t}\n\t}\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+var StyledStats = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].ul(_templateObject(), function (props) {
+  return props.theme.border;
+}, function (props) {
+  return props.theme.black;
+});
+
+var UserStats = function UserStats(props) {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(StyledStats, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, props.me.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }, props.me.email), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, props.itemsCount, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, " Items"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UserStats);
 
 /***/ }),
 
@@ -31992,7 +32085,7 @@ var AccountPage = function AccountPage(props) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Faccount&absolutePagePath=%2FUsers%2Fmaxeuler%2FDesktop%2FSoftwareDev%2FReact%2Fborrow-it%2Ffrontend%2Fpages%2Faccount.js ***!
   \***********************************************************************************************************************************************************************/
@@ -32015,5 +32108,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=account.js.map
